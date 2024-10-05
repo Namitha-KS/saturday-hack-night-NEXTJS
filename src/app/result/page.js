@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Navbar from '../navbar/page';
 
 export default function Result() {
   const [text, setText] = useState('');
@@ -14,9 +15,12 @@ export default function Result() {
   }, []);
 
   return (
-    <div className="container">
-      <h1>Result</h1>
-      <p>Original Text: {text}</p>
+    <div>
+      <Navbar />
+      <div className="container">
+        <h1>Result</h1>
+        <p>Original Text: {text}</p>
+      </div>
     </div>
   );
 }

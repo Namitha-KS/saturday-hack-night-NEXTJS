@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Navbar from '../navbar/page';
 
 export default function Password() {
   const [inputPassword, setInputPassword] = useState('');
@@ -20,17 +21,20 @@ export default function Password() {
   };
 
   return (
-    <div className="container">
-      <h1>Enter Password</h1>
-      <form onSubmit={handlePasswordCheck}>
-        <input 
-          type="text" 
-          value={inputPassword} 
-          onChange={(e) => setInputPassword(e.target.value)} 
-          placeholder="Enter password"
-        />
-        <button type="submit">Submit</button>
-      </form>
+    <div>
+      <Navbar />
+      <div className="container">
+        <h1>Enter Password</h1>
+        <form onSubmit={handlePasswordCheck}>
+          <input 
+            type="text" 
+            value={inputPassword} 
+            onChange={(e) => setInputPassword(e.target.value)} 
+            placeholder="Enter password"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }
