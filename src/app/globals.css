@@ -23,12 +23,26 @@ h1 {
 input, button {
   padding: 10px;
   margin: 10px;
-  border: none;
+  border-color: rgb(133, 133, 133);
+  border-style: 1px solid;
   border-radius: 4px;
   font-size: 16px;
 }
 
 button {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button {
   background-color: #0070f3;
   color: white;
+}
+
+button:hover {
+  background-color: #00499c;
 }
