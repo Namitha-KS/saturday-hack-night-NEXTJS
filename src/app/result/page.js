@@ -20,6 +20,8 @@ export default function Result() {
       <div className="container">
         <h1>Result</h1>
         <p>Original Text: {text}</p>
+        <p>Encrypted Text: {encryptedText}</p>
+        <p>Password: {storedPassword}</p>
       </div>
     </div>
   );

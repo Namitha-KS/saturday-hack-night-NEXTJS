@@ -1,23 +1,34 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const [password, setPassword] = useState(['?', '?', '?', '?']);
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const storedPassword = sessionStorage.getItem('password');
     if (storedPassword) {
-      setPassword(storedPassword.split(''));
-      checkUnlockStatus(storedPassword);
+      const revealedChars = storedPassword.split('').map((char, index) => {
+        const taskCompleted = sessionStorage.getItem(`task${index}`);
+        return taskCompleted ? char : '?';
+      });
+      setPassword(revealedChars);
+      checkUnlockStatus(revealedChars);
     }
   }, []);
 
-  const checkUnlockStatus = (storedPassword) => {
-    if (storedPassword.split('').every(char => char.match(/[a-z]/i))) {
+  const checkUnlockStatus = (revealedChars) => {
+    if (revealedChars.every(char => char !== '?')) {
       setIsUnlocked(true);
+    }
+  };
+
+  const handleUnlock = () => {
+    if (isUnlocked) {
+      router.push('/password');
     }
   };
 
@@ -26,7 +37,9 @@ const Navbar = () => {
       {password.map((char, index) => (
         <span key={index} className="treasure-box">{char}</span>
       ))}
-      <button className="unlock-button" disabled={!isUnlocked}>Unlock Password</button>
+      <button className="unlock-button" disabled={!isUnlocked} onClick={handleUnlock}>
+        Unlock Password
+      </button>
     </nav>
   );
 };
