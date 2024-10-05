@@ -21,8 +21,7 @@ export default function Password() {
   };
 
   const handleGetPassword = () => {
-    // Redirect to task page for unlocking password
-    router.push(`/task`);
+    router.push(`/task1`);
   };
 
   return (
