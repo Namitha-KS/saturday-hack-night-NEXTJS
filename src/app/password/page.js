@@ -1,18 +1,11 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Password() {
   const [inputPassword, setInputPassword] = useState('');
   const router = useRouter();
-  const [text, setText] = useState('');
-  const [storedPassword, setStoredPassword] = useState('');
-
-  useEffect(() => {
-    setText(sessionStorage.getItem('text'));
-    setStoredPassword(sessionStorage.getItem('password'));
-  }, []);
 
   const handlePasswordCheck = (e) => {
     e.preventDefault();
@@ -29,7 +22,6 @@ export default function Password() {
   return (
     <div className="container">
       <h1>Enter Password</h1>
-      <p>Password: {storedPassword}</p>
       <form onSubmit={handlePasswordCheck}>
         <input 
           type="text" 
