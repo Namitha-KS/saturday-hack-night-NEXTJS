@@ -20,6 +20,11 @@ export default function Password() {
     }
   };
 
+  const handleGetPassword = () => {
+    // Redirect to task page for unlocking password
+    router.push(`/task`);
+  };
+
   return (
     <div>
       <Navbar />
@@ -34,6 +39,9 @@ export default function Password() {
           />
           <button type="submit">Submit</button>
         </form>
+        <button className="get-password-button" onClick={handleGetPassword}>
+          Get Password
+        </button>
       </div>
     </div>
   );
