@@ -36,8 +36,13 @@ export default function Task1() {
   }, []);
 
   const handleSentenceClick = (sentence) => {
-    if (!selectedOrder.includes(sentence)) {
+    const index = selectedOrder.indexOf(sentence);
+    if (index === -1) {
       setSelectedOrder([...selectedOrder, sentence]);
+    } else {
+      const newSelectedOrder = [...selectedOrder];
+      newSelectedOrder.splice(index, 1);
+      setSelectedOrder(newSelectedOrder);
     }
   };
 
