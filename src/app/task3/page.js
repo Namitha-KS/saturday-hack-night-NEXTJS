@@ -48,8 +48,8 @@ export default function Task1() {
 
   const handleUnlock = () => {
     if (JSON.stringify(selectedOrder) === JSON.stringify(correctOrder)) {
-      sessionStorage.setItem('task0', true);
-      router.push('/task2');
+      sessionStorage.setItem('task2', true);
+      router.push('/task4');
     } else {
       alert('Try again!');
       navigator.vibrate(200);
