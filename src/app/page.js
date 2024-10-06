@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="container">
-      <h1>Caesar Cipher</h1>
+      <h1>EncDec</h1>
       <form onSubmit={handleSubmit}>
         <input 
           type="text" 
