@@ -15,7 +15,7 @@ export default function Encrypted() {
       <Navbar />
       <div className="container">
         <h1>Encrypted Text</h1>
-        <p>{encryptedText}</p>
+        <p>Encrypted text: {encryptedText}</p>
       </div>
     </div>
   );
