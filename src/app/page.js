@@ -8,10 +8,17 @@ export default function Home() {
   const [text, setText] = useState('');
   const router = useRouter();
 
+  const resetTasks = () => {
+    for (let i = 0; i < 4; i++) {
+      sessionStorage.removeItem(`task${i}`);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const encryptedText = encrypt(text, 3);
-    const randomPassword = Math.random().toString(36).slice(-4);
+    resetTasks();
+    const encryptedText = encrypt(text, 3); // Shift of 3 for Caesar Cipher
+    const randomPassword = Math.random().toString(36).slice(-4); // Generate random 4 letter password
     sessionStorage.setItem('password', randomPassword);
     sessionStorage.setItem('text', text);
     sessionStorage.setItem('encryptedText', encryptedText);
