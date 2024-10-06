@@ -37,9 +37,6 @@ const Navbar = () => {
       {password.map((char, index) => (
         <span key={index} className="treasure-box">{char}</span>
       ))}
-      <button className="unlock-button" disabled={!isUnlocked} onClick={handleUnlock}>
-        Unlock Password
-      </button>
     </nav>
   );
 };
