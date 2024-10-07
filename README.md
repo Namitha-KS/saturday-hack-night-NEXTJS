@@ -4,19 +4,21 @@
 
 
 
-# Project Name
-Long Description about project. This project do that. This project is awesome...
+# EncDec
+Player can lock their texts with a simple encrypt-decrypt algorithm, the other players can find the password to decrypt the text file by solving anagram puzzles
+
 ## Team members
-1. [Name 1](https://github.com/TH-Activities/saturday-hack-night-template)
-2. [Name 2](https://github.com/TH-Activities/saturday-hack-night-template)
-## Link to product walkthrough
-[link to video](Link Here)
-## How it Works ?
-1. Explaining the working of project
-2. Embed video of project demo
+1. [Anand](https://github.com/AnandSuresh02)
+2. [Namitha](https://github.com/Namitha-KS)
+   
+## Link to product - https://saturday-hack-night-nextjs.vercel.app/
+
 ## Libraries used
-Library Name - Version
+- next.js
+  
 ## How to configure
-Instructions for setting up project
+- Clone this repository
+- Install dependencies `npm install`
+  
 ## How to Run
-Instructions for running
+`npm run dev`
